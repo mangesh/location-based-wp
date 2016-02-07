@@ -1,0 +1,53 @@
+// Rem output with px fallback
+@mixin font-size($font-size: $font__base-font-size, $line-height: false) {
+    font-size: rem-calc($font-size);
+
+    @if $line-height == true {
+        line-height: ceil($font-size / $font__base-line-height) * ($font__base-line-height / $font-size);
+    }
+
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+//Should be used for single ul > li nav
+@mixin navigation-list($padding, $color, $hover-color) {
+	list-style:none;
+	padding:0;
+	margin:0;
+	> li{
+		float:left;
+	}
+	a{
+		display: inline-block;
+		padding:$padding;
+		color: $color;
+		&:hover{
+			color: $hover-color;
+		}
+	}
+}

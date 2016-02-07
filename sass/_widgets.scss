@@ -1,0 +1,18 @@
+.widget {
+	margin: rem_calc(0 0 30);
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+}
+
+.widget-sidebar{
+	background: #fff;
+	padding: rem-calc(20);
+	clear: both;
+}
+
+/* Search widget. */
+.widget_search .search-submit {
+	display: none;
+}
